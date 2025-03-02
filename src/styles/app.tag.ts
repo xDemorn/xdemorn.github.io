@@ -1,12 +1,14 @@
 import './app.tag.css'
 
 export class AppElement extends HTMLElement {
+  id: string;
   name: string;
   icon: string;
 
   constructor() {
     super();
 
+    this.id = (Math.random() * 10_000).toString();
     this.name = this.getAttribute('name') || 'NOT/SET';
     this.icon = this.getAttribute('icon') || 'unknown.svg';
   }
@@ -23,7 +25,9 @@ export class AppElement extends HTMLElement {
         </div>
       </div>
       
-      <slot name="content">Default content</slot>
+      <div>
+        <slot name="content">Default content</slot>
+      </div>
     `;
 
     this.querySelector('.minimize')!.addEventListener('click', this.onMinimize);

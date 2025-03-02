@@ -4,17 +4,14 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Rubik OS</title>
+    <script src="/src/main.ts" type="module"></script>
     <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/styles/desktop-app.css" />
+    <link rel="stylesheet" href="src/styles/app.css">
   </head>
   <body>
-    <main id="main-window" style="background-image: url(/wallpapers/wallpaper_4.webp);">
-      <!-- <desktop-app name="My Computer" icon="computer.svg"></desktop-app> -->
-
-      <!-- <custom-app name="My Computer" icon="computer.svg">
-        <div slot="content">somethink new!?</div>
-      </custom-app> -->
-    </main>
+    <main id="main-window" style="background-image: url(/wallpapers/wallpaper_4.webp);"></main>
     <footer id="main-footer">
       <button id="system-os">
         <img src="system-os.png" alt="System OS">
@@ -22,8 +19,10 @@
 
       <div id="taskbar"></div>
 
-      <div id="system-info"></div>
+      <div id="system-info">
+        <span id="time">15:00</span>
+        <span id="date">17/2/2025</span>
+      </div>
     </footer>
-    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

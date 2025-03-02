@@ -1,0 +1,72 @@
+div.app {
+  min-width: 400px;
+  min-height: 350px;
+  background: #b3b3b3;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  border-radius: 4px;
+  display: grid;
+  flex-direction: column;
+  grid-template-columns: 1fr;
+  grid-template-rows: 32px 1fr;
+}
+
+div.app div.header {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 0 4px;
+  background: #3d3d3d;
+  cursor: move;
+  height: 32px;
+}
+
+div.app div.header > img {
+  height: 28px;
+}
+
+div.app div.header>span {
+  flex: 1;
+}
+
+div.app div.header div.controls {
+  display: flex;
+  gap: 4px;
+}
+
+div.app div.header div.controls button {
+  all: unset;
+  height: 16px;
+  width: 16px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 250ms;
+}
+
+div.app div.header div.controls button > span {
+  font-size: 1rem;
+}
+
+div.app div.header div.controls button.minimize {
+  background: limegreen;
+}
+
+div.app div.header div.controls button.maximize {
+  background: orange;
+}
+
+div.app div.header div.controls button.close {
+  background: red;
+}
+
+div.app div.header div.controls button:hover {
+  background: #494949;
+}
+
+div.app div.content {
+  padding: 4px;
+}
