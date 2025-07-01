@@ -1,0 +1,13 @@
+article.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 250ms all;
+
+    &:hover {
+        border: 1px solid dimgray;
+    }
+}
