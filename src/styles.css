@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    background: #242424;
+    color: aliceblue;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100dvh;
+    width: 100dvw;
+    overflow: hidden;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+app-root {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}

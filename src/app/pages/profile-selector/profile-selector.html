@@ -1,0 +1,5 @@
+@for (profile of this.profiles(); track $index) {
+    <section class="profile-item" (click)="this.selectProfile(profile)">
+        <p>{{ profile.name }}</p>
+    </section>
+}
