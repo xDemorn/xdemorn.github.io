@@ -1,0 +1,9 @@
+section.app {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    background: gray;
+    border-radius: 8px;
+    min-width: 250px;
+    min-height: 300px;
+}

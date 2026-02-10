@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { Profile } from '../../core/interfaces/profile';
+import { Profile } from '../../interfaces/profile';
 import { Router } from '@angular/router';
 
 @Component({
@@ -25,8 +25,6 @@ export class ProfileSelector {
   ]);
 
   public selectProfile(profile: Profile): void {
-    console.log(profile);
-
     sessionStorage.setItem('profile', JSON.stringify(profile));
 
     this.router.navigate(['/']);

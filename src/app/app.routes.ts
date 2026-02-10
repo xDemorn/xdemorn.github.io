@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { ProfileSelector } from './pages/profile-selector/profile-selector';
-import { hasNotSelectedProfile, hasSelectedProfile } from './core/guards/profile-guard';
+import { hasNotSelectedProfile, hasSelectedProfile } from './guards/profile-guard';
 import { Desktop } from './pages/desktop/desktop';
 
 export const routes: Routes = [
