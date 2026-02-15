@@ -1,9 +1,10 @@
 import { Component, InputSignal } from '@angular/core';
 import { AppBase } from '../../components/app/app';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-settings',
-  imports: [AppBase],
+  imports: [AppBase, ButtonModule],
   templateUrl: './settings.html',
   styleUrl: './settings.css',
 })
