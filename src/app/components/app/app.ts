@@ -1,12 +1,12 @@
 import { Component, input, output } from '@angular/core';
 
 @Component({
-  selector: 'app',
+  selector: 'app-base',
   imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {
+export class AppBase {
   icon = input<string>();
   name = input<string>();
 

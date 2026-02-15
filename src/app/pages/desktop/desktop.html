@@ -1,4 +1,6 @@
 <main>
-    <desktop-app icon="favicon.ico" name="Settings" />
+    <ng-container #dynamicAppContainer></ng-container>
+    <desktop-app icon="favicon.ico" name="Browser" (dblclick)="open(AppType.Browser)" />
+    <desktop-app icon="favicon.ico" name="Settings" (dblclick)="open(AppType.Settings)" />
 </main>
 <app-footer />

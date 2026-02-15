@@ -1,1 +1,15 @@
-<p>footer works!</p>
+<footer>
+    <button id="start-menu">SM</button>
+    <div id="app-list">
+        @for (app of this.apps(); track $index) {
+            <button>
+                <img [src]="app.icon()" alt="Opened app icon">
+                <span>{{ app.name() }}</span>
+            </button>
+        }
+    </div>
+    <div id="time-container">
+        <p id="time">{{ formatTime() }}</p>
+        <p id="day">{{ formatDate() }}</p>
+    </div>
+</footer>

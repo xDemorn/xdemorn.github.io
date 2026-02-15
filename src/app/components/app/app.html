@@ -1,6 +1,12 @@
-<section class="app">
-    <header>{{ name() }}</header>
-    <div class="content">
-        <ng-content />
+<header>
+    <img [src]="this.icon()" alt="App icon">
+    <span>{{ name() }}</span>
+    <div class="actions">
+        <button>&times;</button>
+        <button>&times;</button>
+        <button>&times;</button>
     </div>
-</section>
+</header>
+<div class="content">
+    <ng-content />
+</div>

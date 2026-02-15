@@ -1,9 +1,41 @@
-section.app {
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    background: gray;
-    border-radius: 8px;
-    min-width: 250px;
-    min-height: 300px;
+header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px;
+    background: #333;
+    color: white;
+    font-weight: bold;
+
+    img {
+        width: 16px;
+        height: 16px;
+        scale: 1;
+    }
+
+    span {
+        flex: 1;
+    }
+
+    div.actions {
+        display: flex;
+        gap: 4px;
+
+        button {
+            width: 16px;
+            height: 16px;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 12px;
+            line-height: 16px;
+            padding: 0;
+            cursor: pointer;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 4px;
+            }
+        }
+    }
 }

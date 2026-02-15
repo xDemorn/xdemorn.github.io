@@ -1,19 +1,16 @@
-:root {
-    background: #242424;
-    color: aliceblue;
-}
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: dm, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    color: aliceblue;
 }
 
 html {
     height: 100dvh;
     width: 100dvw;
     overflow: hidden;
+    background: #242424;
 }
 
 body {
