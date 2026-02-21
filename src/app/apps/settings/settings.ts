@@ -1,4 +1,4 @@
-import { Component, InputSignal } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { AppBase } from '../../components/app/app';
 import { ButtonModule } from 'primeng/button';
 
@@ -8,5 +8,9 @@ import { ButtonModule } from 'primeng/button';
   templateUrl: './settings.html',
   styleUrl: './settings.css',
 })
-export class Settings extends AppBase {
+export class Settings extends AppBase implements AfterViewInit {
+  ngAfterViewInit(): void {
+    const data = localStorage.getItem('settings');
+    console.log('Loaded settings:', data);
+  }
 }

@@ -1,6 +1,6 @@
 <main>
-    <ng-container #dynamicAppContainer></ng-container>
-    <desktop-app icon="favicon.ico" name="Browser" (dblclick)="open(AppType.Browser)" />
-    <desktop-app icon="favicon.ico" name="Settings" (dblclick)="open(AppType.Settings)" />
+    @for (app of this.apps; track $index) {
+        <desktop-app [icon]="app.icon" [name]="app.name" (dblclick)="open(app.type)" />
+    }
 </main>
 <app-footer />

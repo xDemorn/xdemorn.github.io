@@ -3,8 +3,8 @@
     <div id="app-list">
         @for (app of this.apps(); track $index) {
             <button>
-                <img [src]="app.icon()" alt="Opened app icon">
-                <span>{{ app.name() }}</span>
+                <img [src]="app.icon" alt="Opened app icon">
+                <span>{{ app.name }}</span>
             </button>
         }
     </div>

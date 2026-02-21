@@ -1,9 +1,10 @@
 main {
-    position: relative;
+    /* position: relative; */
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(64px, 64px));
     grid-template-columns: repeat(auto-fit, minmax(64px, 64px));
     gap: 8px;
+    padding: 0 8px;
 }
 
 ::ng-deep .app-window {

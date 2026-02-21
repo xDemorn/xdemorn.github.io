@@ -1,6 +1,6 @@
 <header>
-    <img [src]="this.icon()" alt="App icon">
-    <span>{{ name() }}</span>
+    <img [src]="this.settings()?.icon" alt="App icon">
+    <span>{{ this.settings()?.name }}</span>
     <div class="actions">
         <button>&times;</button>
         <button>&times;</button>

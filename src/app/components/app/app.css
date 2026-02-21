@@ -39,3 +39,7 @@ header {
         }
     }
 }
+
+div.content {
+    padding: 8px;
+}

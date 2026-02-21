@@ -12,17 +12,33 @@ import { AppType } from '../../enums/app-types';
 })
 export class Desktop {
   private appsService = inject(Apps);
-  @ViewChild('dynamicAppContainer', { read: ViewContainerRef }) dynamicAppContainer!: ViewContainerRef;
+  private vcr = inject(ViewContainerRef);
+
+  public apps: Array<{ type: AppType, icon: string, name: string }> = [
+    { type: AppType.Settings, icon: 'favicon.ico', name: 'Settings' },
+    { type: AppType.Browser, icon: 'favicon.ico', name: 'Browser' },
+  ];
 
   // Expose AppType to the template
   public AppType = AppType;
 
   public open(type: AppType) {
-    const c = this.appsService.getComponentForAppType(type);
-    const component = this.dynamicAppContainer.createComponent(c);
-    component.location.nativeElement.classList.add('app-window');
-    console.log(component)
+    const s = this.appsService.get(type);
+    if (!s) {
+      console.error(`App not found for type: ${type}`);
+      return;
+    }
 
-    this.appsService.open(type);
+    const component = this.vcr.createComponent(s.component);
+    component.location.nativeElement.classList.add('app-window');
+    component.setInput('type', type);
+    component.setInput('data', s);
+
+    component.instance.loadSettings();
+
+    component.changeDetectorRef.detectChanges();
+
+    // TODO: rework
+    // this.appsService.open(type);
   }
 }
