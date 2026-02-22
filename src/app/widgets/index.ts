@@ -1,4 +1,4 @@
-import { Settings } from "./settings/settings";
+import { Settings } from "./settings/widget-settings";
 // import { Browser } from "./browser/browser";
 
 export {

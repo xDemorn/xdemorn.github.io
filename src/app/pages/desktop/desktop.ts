@@ -1,7 +1,7 @@
 import { Component, inject, ViewContainerRef, ViewChild } from '@angular/core';
 import { Footer } from '../../components/footer/footer';
 import { DesktopApp } from '../../components/desktop-app/desktop-app';
-import { Apps } from '../../services/apps';
+import { AppsService } from '../../services/apps-service';
 import { AppType } from '../../enums/app-types';
 
 @Component({
@@ -11,7 +11,7 @@ import { AppType } from '../../enums/app-types';
   styleUrl: './desktop.css'
 })
 export class Desktop {
-  private appsService = inject(Apps);
+  private appsService = inject(AppsService);
   private vcr = inject(ViewContainerRef);
 
   public apps: Array<{ type: AppType, icon: string, name: string }> = [
@@ -31,12 +31,6 @@ export class Desktop {
 
     const component = this.vcr.createComponent(s.component);
     component.location.nativeElement.classList.add('app-window');
-    component.setInput('type', type);
-    component.setInput('data', s);
-
-    component.instance.loadSettings();
-
-    component.changeDetectorRef.detectChanges();
 
     // TODO: rework
     // this.appsService.open(type);

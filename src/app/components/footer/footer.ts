@@ -1,7 +1,7 @@
 import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
-import { AppBase } from '../app/app';
+import { BaseWidget } from '../base-widget/base-widget';
 import { Subscription } from 'rxjs';
-import { Apps } from '../../services/apps';
+import { AppsService } from '../../services/apps-service';
 import { Type } from '@angular/compiler';
 import { IApp } from '../../interfaces/app';
 
@@ -12,7 +12,7 @@ import { IApp } from '../../interfaces/app';
   styleUrl: './footer.css',
 })
 export class Footer implements OnInit, OnDestroy {
-  private appsService = inject(Apps);
+  private appsService = inject(AppsService);
 
   private dateInterval: any;
   private $apps!: Subscription;

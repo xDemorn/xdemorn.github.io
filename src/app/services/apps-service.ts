@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { AppBase } from '../components/app/app';
 import { AppType } from '../enums/app-types';
-import { Settings } from '../apps';
+import { Settings } from '../widgets';
 import { IApp } from '../interfaces/app';
 
 const AVAILABLE_APPS: Map<AppType, IApp> = new Map<AppType, IApp>([
@@ -17,7 +16,7 @@ const AVAILABLE_APPS: Map<AppType, IApp> = new Map<AppType, IApp>([
 @Injectable({
   providedIn: 'root',
 })
-export class Apps {
+export class AppsService {
   $openedApps: BehaviorSubject<Array<IApp>> = new BehaviorSubject<Array<IApp>>([]);
 
   public open(app: AppType) {
