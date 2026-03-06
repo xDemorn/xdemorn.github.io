@@ -1,5 +1,5 @@
 <footer>
-    <button id="start-menu">SM</button>
+    <button id="start-menu">{{ this.initials() }}</button>
     <div id="app-list">
         @for (app of this.apps(); track $index) {
             <button>

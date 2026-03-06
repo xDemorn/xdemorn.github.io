@@ -1,6 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { Profile } from '../../interfaces/profile';
 import { Router } from '@angular/router';
+import { ProfileService } from '../../services/profile-service';
 
 @Component({
   selector: 'app-profile-selector',
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrl: './profile-selector.css',
 })
 export class ProfileSelector {
-  private router = inject(Router);
+  private readonly router = inject(Router);
+  private readonly profileService = inject(ProfileService);
 
   protected readonly profiles = signal<Array<Profile>>([
     {
@@ -26,6 +28,8 @@ export class ProfileSelector {
 
   public selectProfile(profile: Profile): void {
     sessionStorage.setItem('profile', JSON.stringify(profile));
+
+    this.profileService.changeProfile(profile);
 
     this.router.navigate(['/']);
   }

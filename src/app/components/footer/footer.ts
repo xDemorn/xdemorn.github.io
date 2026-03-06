@@ -1,9 +1,8 @@
-import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
-import { BaseWidget } from '../base-widget/base-widget';
+import { Component, computed, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AppsService } from '../../services/apps-service';
-import { Type } from '@angular/compiler';
 import { IApp } from '../../interfaces/app';
+import { ProfileService } from '../../services/profile-service';
 
 @Component({
   selector: 'app-footer',
@@ -13,12 +12,21 @@ import { IApp } from '../../interfaces/app';
 })
 export class Footer implements OnInit, OnDestroy {
   private appsService = inject(AppsService);
+  private profileService = inject(ProfileService);
 
   private dateInterval: any;
-  private $apps!: Subscription;
+  private $subs: Array<Subscription> = [];
 
   public now: number = Date.now();
   public apps = signal([] as Array<IApp>);
+
+  protected readonly initials = computed(() => {
+    const profile = this.profileService.$activeProfile.getValue();
+    
+    if (!profile) return '';
+
+    return profile.name.split(' ').map(part => part[0]).join('');
+  });
 
   ngOnInit(): void {
     this.now = Date.now();
@@ -26,7 +34,9 @@ export class Footer implements OnInit, OnDestroy {
       this.now = Date.now();
     }, 1000);
 
-    this.$apps = this.appsService.$openedApps.subscribe((apps: Array<IApp>) => this.apps.set([ ...apps ]));
+    this.$subs.push(this.appsService.$openedApps.subscribe((apps: Array<IApp>) => this.apps.set([ ...apps ])));
+
+
   }
 
   ngOnDestroy(): void {
@@ -35,7 +45,7 @@ export class Footer implements OnInit, OnDestroy {
       this.dateInterval = null;
     }
 
-    this.$apps.unsubscribe();
+    this.$subs.forEach(sub => sub.unsubscribe());
   }
 
   public formatTime(): string {

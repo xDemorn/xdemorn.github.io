@@ -1,7 +1,5 @@
-import { Component, inject, input, output, signal } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { IApp } from '../../interfaces/app';
-import { AppsService } from '../../services/apps-service';
-import { AppType } from '../../enums/app-types';
 import { ButtonModule } from 'primeng/button';
 
 @Component({
@@ -11,7 +9,6 @@ import { ButtonModule } from 'primeng/button';
   styleUrl: './base-widget.css',
 })
 export class BaseWidget {
-  public readonly type = input.required<AppType>();
   public readonly data = input.required<IApp | null>();
 
   onMinimize = output<void>();

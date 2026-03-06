@@ -32,6 +32,8 @@ export class Desktop {
     const component = this.vcr.createComponent(s.component);
     component.location.nativeElement.classList.add('app-window');
 
+    component.instance.$element = component.location.nativeElement;
+
     // TODO: rework
     // this.appsService.open(type);
   }
