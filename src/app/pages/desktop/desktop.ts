@@ -1,4 +1,4 @@
-import { Component, inject, ViewContainerRef, ViewChild } from '@angular/core';
+import { Component, inject, ViewContainerRef } from '@angular/core';
 import { Footer } from '../../components/footer/footer';
 import { DesktopApp } from '../../components/desktop-app/desktop-app';
 import { AppsService } from '../../services/apps-service';

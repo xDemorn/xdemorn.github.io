@@ -1,6 +1,6 @@
+import { IApp } from "../interfaces";
 import { AppType } from "../enums/app-types";
 import { AppsService } from "../services/apps-service";
-import { IApp } from "./app";
 
 export abstract class Widget {
   protected readonly type: AppType = AppType.None;

@@ -1,10 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { BaseWidget } from '../../components/base-widget/base-widget';
-import { Widget } from '../../interfaces/widget';
+import { Widget } from '../../classes/widget';
 import { AppType } from '../../enums/app-types';
 import { AppsService } from '../../services/apps-service';
-import { ISettings } from '../../interfaces/settings';
+import { ISettings } from '../../interfaces';
 
 @Component({
   selector: 'widget-settings',

@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
-import { Profile } from '../../interfaces/profile';
 import { Router } from '@angular/router';
 import { ProfileService } from '../../services/profile-service';
+import { Profile } from '../../interfaces';
 
 @Component({
   selector: 'app-profile-selector',

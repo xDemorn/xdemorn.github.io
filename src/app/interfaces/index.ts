@@ -7,3 +7,11 @@ export interface IApp {
     name: string;
     component: Type<Settings>;
 }
+
+export interface Profile {
+    img: string;
+    name: string;
+    isGuest: boolean;
+}
+
+export interface ISettings {}

@@ -1,6 +1,6 @@
 import { Component, input, output } from '@angular/core';
-import { IApp } from '../../interfaces/app';
 import { ButtonModule } from 'primeng/button';
+import { IApp } from '../../interfaces';
 
 @Component({
   selector: 'base-widget',

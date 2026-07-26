@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { AppType } from '../enums/app-types';
 import { Settings } from '../widgets';
-import { IApp } from '../interfaces/app';
+import { IApp } from '../interfaces';
 
 const AVAILABLE_APPS: Map<AppType, IApp> = new Map<AppType, IApp>([
   [AppType.Settings, {

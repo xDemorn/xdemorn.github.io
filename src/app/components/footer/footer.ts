@@ -1,8 +1,8 @@
 import { Component, computed, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AppsService } from '../../services/apps-service';
-import { IApp } from '../../interfaces/app';
 import { ProfileService } from '../../services/profile-service';
+import { IApp } from '../../interfaces';
 
 @Component({
   selector: 'app-footer',
