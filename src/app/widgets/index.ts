@@ -1,5 +1,5 @@
-import { Settings } from "./settings/widget-settings";
-// import { Browser } from "./browser/browser";
+import { Settings } from "@widgets/settings/settings";
+// import { Browser } from "@widgets/browser/browser";
 
 export {
     Settings,

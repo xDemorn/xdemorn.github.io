@@ -6,20 +6,3 @@ main {
     gap: 8px;
     padding: 0 8px;
 }
-
-::ng-deep .app-window {
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    background: gray;
-    border-radius: 8px;
-    min-width: 350px;
-    min-height: 400px;
-    border: 1px solid black;
-    user-select: none;
-    transition: 500ms all;
-
-    &:focus {
-        box-shadow: 0 0 4px 8px aqua;
-    }
-}

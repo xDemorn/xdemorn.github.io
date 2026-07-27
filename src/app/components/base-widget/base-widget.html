@@ -1,11 +1,13 @@
-<header>
-    <img [src]="this.data()?.icon" alt="App icon">
-    <span>{{ this.data()?.name }}</span>
-    <div class="actions">
-        <button class="minimize" (click)="this.minimize()">&times;</button>
-        <button class="maximize" (click)="this.maximize()">&times;</button>
-        <button class="close" (click)="this.close()">&times;</button>
-    </div>
+<header draggable>
+    <ng-container slot="header">
+        <img [src]="icon()" alt="App icon">
+        <span>{{ name() }}</span>
+        <div class="actions">
+            <button class="minimize" (click)="minimize()">&times;</button>
+            <button class="maximize" (click)="maximize()">&times;</button>
+            <button class="close" (click)="close()">&times;</button>
+        </div>
+    </ng-container>
 </header>
 <div class="content">
     <ng-content />

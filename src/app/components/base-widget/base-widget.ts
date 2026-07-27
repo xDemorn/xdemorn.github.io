@@ -1,29 +1,32 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
-import { IApp } from '../../interfaces';
+import { IWidgetDimensions } from '../../interfaces';
+import { AppsService } from '@app/services/apps-service';
+import { Draggable } from '@app/directives/draggable';
 
 @Component({
   selector: 'base-widget',
-  imports: [ButtonModule],
+  imports: [ButtonModule, Draggable],
   templateUrl: './base-widget.html',
   styleUrl: './base-widget.css',
 })
 export class BaseWidget {
-  public readonly data = input.required<IApp | null>();
+  private readonly appsService = inject(AppsService);
+  private initialDimensions: IWidgetDimensions = { top: 24, left: 24, width: 350, height: 400 };
 
-  onMinimize = output<void>();
-  onMaximize = output<void>();
-  onClose = output<void>();
+  id = input.required<string>();
+  icon = input.required<string>();
+  name = input.required<string>();
 
   minimize() {
-    this.onMinimize.emit();
+    throw new Error('Method not implemented.');
   }
 
   maximize() {
-    this.onMaximize.emit();
+    throw new Error('Method not implemented.');
   }
 
   close() {
-    this.onClose.emit();
+    this.appsService.close(this.id());
   }
 }

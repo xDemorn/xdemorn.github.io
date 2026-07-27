@@ -15,3 +15,10 @@ export interface Profile {
 }
 
 export interface ISettings {}
+
+export interface IWidgetDimensions {
+  top: number;
+  left: number;
+  width: number;
+  height: number;
+}

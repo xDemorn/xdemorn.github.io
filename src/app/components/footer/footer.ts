@@ -17,8 +17,8 @@ export class Footer implements OnInit, OnDestroy {
   private dateInterval: any;
   private $subs: Array<Subscription> = [];
 
-  public now: number = Date.now();
-  public apps = signal([] as Array<IApp>);
+  public now: Date = new Date();
+  public apps = signal<Array<IApp>>([]);
 
   protected readonly initials = computed(() => {
     const profile = this.profileService.$activeProfile.getValue();
@@ -29,9 +29,9 @@ export class Footer implements OnInit, OnDestroy {
   });
 
   ngOnInit(): void {
-    this.now = Date.now();
+    this.now = new Date();
     this.dateInterval = setInterval(() => {
-      this.now = Date.now();
+      this.now = new Date();
     }, 1000);
 
     this.$subs.push(this.appsService.$openedApps.subscribe((apps: Array<IApp>) => this.apps.set([ ...apps ])));
@@ -49,10 +49,10 @@ export class Footer implements OnInit, OnDestroy {
   }
 
   public formatTime(): string {
-    return new Date(this.now).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    return this.now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   }
 
   public formatDate(): string {
-    return new Date(this.now).toLocaleDateString([], { month: 'numeric', day: 'numeric', year: 'numeric' });
+    return this.now.toLocaleDateString([], { month: 'numeric', day: 'numeric', year: 'numeric' });
   }
 }

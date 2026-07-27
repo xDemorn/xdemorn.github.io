@@ -1,6 +1,8 @@
 <main>
     @for (app of this.apps; track $index) {
-        <desktop-app [icon]="app.icon" [name]="app.name" (dblclick)="open(app.type)" />
+        <desktop-app [icon]="app.icon" [name]="app.name" (dblclick)="this.appsService.open(app.type)" />
     }
 </main>
 <app-footer />
+
+<p-toast position="bottom-right" key="bottom-right" />
