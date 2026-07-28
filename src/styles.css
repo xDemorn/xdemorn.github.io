@@ -17,6 +17,9 @@ body {
     height: 100%;
     width: 100%;
     position: relative;
+    background-image: url('public/wallpaper.webp');
+    background-size: cover;
+    background-position: center;
 
     .window-container {
         position: absolute;
