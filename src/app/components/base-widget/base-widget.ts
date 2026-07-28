@@ -12,7 +12,6 @@ import { Draggable } from '@app/directives/draggable';
 })
 export class BaseWidget {
   private readonly appsService = inject(AppsService);
-  private initialDimensions: IWidgetDimensions = { top: 24, left: 24, width: 350, height: 400 };
 
   id = input.required<string>();
   icon = input.required<string>();
